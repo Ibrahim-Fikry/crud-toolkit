@@ -4,6 +4,7 @@ export default function Posts() {
   return (
    <>
     <div className='container'>
+    <h1>CRUD APP USING REDUX TOOLKIT</h1>
     <div className='form'>
       <input type="text" placeholder='pease enter post title' />
       <input type="text" placeholder='pease enter  description' />
