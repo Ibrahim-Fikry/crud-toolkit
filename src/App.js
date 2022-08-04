@@ -1,9 +1,12 @@
 import './App.css';
+import Posts from './components/Posts';
 
 function App() {
   return (
     <>
-    crud
+     <div className='postsection' >
+         <Posts/>
+     </div>
     </>
   );
 }
