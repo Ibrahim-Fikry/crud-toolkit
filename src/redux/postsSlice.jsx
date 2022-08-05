@@ -16,11 +16,26 @@ let postsslice= createSlice({
         deletpost:function(state,action){
              
              state.items=state.items.filter((item) => item.id !==action.payload.id)
-            //  state.items.splice(action.payload.id ,0)
+            //  let index= this.state.items.indexOf(state.items[)
+            //  console.log(action.payload.id);
+            //  console.log(index);
+            //   state.items.splice(index ,0)
 
-            }
+            },
+        updatepost:function(state,action){
+            state.items.map(item =>{ 
+                if(item.id==action.payload.id){
+                    item.title=action.payload.title 
+                    item.discribtion=action.payload.discribtion
+                    
+                    
+                }   
+              
+            })
+        
+        },
     },
 })
 
-export const {addposts,deletpost} = postsslice.actions
+export const {addposts,deletpost,updatepost} = postsslice.actions
 export default postsslice.reducer
