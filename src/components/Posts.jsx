@@ -1,7 +1,7 @@
 import { getByTitle } from '@testing-library/react'
 import React, { useEffect, useState } from 'react'
 import { useDispatch ,useSelector} from 'react-redux/es/exports'
-import {addposts} from './../redux/postsSlice'
+import {addposts,deletpost} from './../redux/postsSlice'
 
 export default function Posts() {
   const [title,settitle]=useState('')
@@ -31,11 +31,14 @@ export default function Posts() {
        <div key={index} className='formactions'>
        <h1>{post.title}</h1>
        <p>{post.discribtion}</p>
-       <button>Edite POST</button>
-       <button>Delete POST</button>
+       <button >Edite POST</button>
+       <button onClick={()=>{
+        dispatch(deletpost({id:post.id}))   
+        // dispatch(deletpost(post.id))
+       }}>Delete POST</button>
       </div>
        </>
-       ):'no posts yet'
+       ):<h1>no posts yet</h1>
       }
     
        

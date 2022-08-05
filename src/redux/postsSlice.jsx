@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
+// import Posts from './../components/Posts';
 
 
 let postsslice= createSlice({
@@ -9,11 +10,17 @@ let postsslice= createSlice({
     },
     reducers:{
         addposts:function(state,action){
-            // console.log(state.posts[0]);
+            
             state.items.unshift(action.payload)
-        }
+        },
+        deletpost:function(state,action){
+             
+             state.items=state.items.filter((item) => item.id !==action.payload.id)
+            //  state.items.splice(action.payload.id ,0)
+
+            }
     },
 })
 
-export const {addposts} = postsslice.actions
+export const {addposts,deletpost} = postsslice.actions
 export default postsslice.reducer
